@@ -1,8 +1,11 @@
 #!/bin/bash
 set -e
 
+# Set PATH to use the correct Node version
+export PATH="/root/.nvm/versions/node/v24.13.0/bin:$PATH"
+
 cd learn-ci-cd
 git pull origin main
-/root/.nvm/versions/node/v24.13.0/bin/npm install
-/root/.nvm/versions/node/v24.13.0/bin/npm run build
-/root/.nvm/versions/node/v24.13.0/bin/pm2 restart app || /root/.nvm/versions/node/v24.13.0/bin/pm2 start ./dist/index.js --name "app"
+npm install
+npm run build
+pm2 restart app || pm2 start ./dist/index.js --name "app"
