@@ -18,7 +18,7 @@ jobs:
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: 168.144.25.120
-          username: ubuntu
-          key: ${{ secrets.PRIVATE_SSH_KEY }}
+          username: root
+          key: ${{ secrets.PRIVATE_KEY }}
           port: 22
           script: ./deploy.sh
