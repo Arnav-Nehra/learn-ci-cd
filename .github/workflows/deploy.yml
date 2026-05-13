@@ -22,5 +22,5 @@ jobs:
           username: root
           key: ${{ secrets.PRIVATE_KEY }}
           port: 22
-          script_path: ./deploy.sh
+          script: ./deploy.sh
           debug: true
