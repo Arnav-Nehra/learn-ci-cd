@@ -14,13 +14,12 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v2
 
-      - name: executing remote ssh commands using password
-        uses: appleboy/ssh-action@v1.2.0
+      - name: Execute remote SSH commands using SSH key
+        uses: appleboy/ssh-action@v1
         with:
           host: 168.144.25.120
           username: root
           key: ${{ secrets.PRIVATE_KEY }}
           port: 22
           script: ./deploy.sh
-          strict_host_key_checking: false
           debug: true
